@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Jost:wght@400;500;600&display=swap");
+
+.aroma-selector {
+  --cg-black: #111111;
+  --cg-cream: #f7f5f0;
+  --cg-gold: #b7935f;
+  --cg-gray: #6f6b64;
+
+  background: var(--cg-black);
+  padding: 140px 60px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.aroma-selector--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.aroma-selector__header {
+  max-width: 640px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.aroma-selector__number {
+  display: block;
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cg-gold);
+  margin-bottom: 22px;
+}
+
+.aroma-selector__lead {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 26px;
+  color: var(--cg-cream);
+  margin: 0;
+}
+
+.aroma-selector__notes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  max-width: 900px;
+  margin: 0 auto 64px;
+}
+
+.aroma-selector__note {
+  background: none;
+  border: 1px solid #3a372f;
+  color: #b9b3a5;
+  padding: 14px 30px;
+  font-family: "Jost", sans-serif;
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+}
+
+.aroma-selector__note:hover {
+  border-color: var(--cg-gold);
+  color: var(--cg-cream);
+}
+
+.aroma-selector__note--active {
+  background: var(--cg-gold);
+  border-color: var(--cg-gold);
+  color: var(--cg-black);
+}
+
+.aroma-selector__panel {
+  position: relative;
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 48px 24px;
+  animation: as-panel-in 0.5s ease both;
+}
+
+@keyframes as-panel-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.aroma-selector__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 40%, rgba(183, 147, 95, 0.18), transparent 65%);
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+.aroma-selector__row {
+  position: relative;
+  border-top: 1px solid #2b2822;
+  padding: 20px 0;
+}
+
+.aroma-selector__row:first-of-type {
+  border-top: none;
+}
+
+.aroma-selector__row span {
+  display: block;
+  font-family: "Jost", sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #8f897b;
+  margin-bottom: 8px;
+}
+
+.aroma-selector__row p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  color: var(--cg-cream);
+  margin: 0;
+}
+
+.aroma-selector__placeholder {
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  color: #8f897b;
+}
+
+@media (max-width: 768px) {
+  .aroma-selector {
+    padding: 90px 24px;
+  }
+
+  .aroma-selector__note {
+    padding: 12px 20px;
+    font-size: 10.5px;
+  }
+
+  .aroma-selector__row p {
+    font-size: 19px;
+  }
+}

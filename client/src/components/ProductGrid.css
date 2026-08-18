@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Jost:wght@400;500;600&display=swap");
+
+.product-view {
+  --cg-white: #ffffff;
+  --cg-black: #111111;
+  --cg-cream: #f7f5f0;
+  --cg-gold: #b7935f;
+  --cg-gray: #6f6b64;
+
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.product-view__header {
+  text-align: center;
+  margin: 8px 0 56px;
+}
+
+.product-view__title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 38px;
+  color: var(--cg-black);
+  margin: 0 0 12px;
+}
+
+.product-view__subtitle {
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  color: var(--cg-gray);
+  margin: 0;
+}
+
+.product-view__state {
+  text-align: center;
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  color: var(--cg-gray);
+  padding: 80px 20px;
+}
+
+.product-view__state--error {
+  color: #a8352f;
+}
+
+.product-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 44px 32px;
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  .product-grid-layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .product-view__header {
+    margin: 4px 0 36px;
+  }
+
+  .product-view__title {
+    font-size: 28px;
+  }
+
+  .product-view__subtitle {
+    font-size: 12px;
+  }
+
+  .product-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .product-view__state {
+    padding: 56px 16px;
+  }
+}

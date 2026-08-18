@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Jost:wght@400;500;600&display=swap");
+
+.tasting-card {
+  --cg-black: #111111;
+  --cg-cream: #f7f5f0;
+  --cg-gold: #b7935f;
+  --cg-gray: #6f6b64;
+
+  background: var(--cg-cream);
+  padding: 140px 24px;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.tasting-card--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tasting-card__panel {
+  width: 100%;
+  max-width: 520px;
+  background: var(--cg-black);
+  padding: 56px 48px;
+  position: relative;
+}
+
+.tasting-card__panel::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(183, 147, 95, 0.35);
+  pointer-events: none;
+}
+
+.tasting-card__eyebrow {
+  display: block;
+  text-align: center;
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: var(--cg-gold);
+  margin-bottom: 40px;
+}
+
+.tasting-card__rows {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 44px;
+}
+
+.tasting-card__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 16px 0;
+  border-bottom: 1px solid #2b2822;
+}
+
+.tasting-card__row:last-child {
+  border-bottom: none;
+}
+
+.tasting-card__row span {
+  font-family: "Jost", sans-serif;
+  font-size: 10.5px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #8f897b;
+}
+
+.tasting-card__row p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 19px;
+  color: var(--cg-cream);
+  margin: 0;
+  text-align: right;
+}
+
+.tasting-card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tasting-card__explore,
+.tasting-card__again {
+  padding: 16px 0;
+  font-family: "Jost", sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.tasting-card__explore {
+  background: var(--cg-gold);
+  color: var(--cg-black);
+  border: none;
+}
+
+.tasting-card__explore:hover {
+  background: #cbaa78;
+}
+
+.tasting-card__again {
+  background: none;
+  border: 1px solid #4a463c;
+  color: #b9b3a5;
+}
+
+.tasting-card__again:hover {
+  border-color: var(--cg-cream);
+  color: var(--cg-cream);
+}
+
+@media (max-width: 768px) {
+  .tasting-card {
+    padding: 90px 20px;
+  }
+
+  .tasting-card__panel {
+    padding: 40px 28px;
+  }
+}

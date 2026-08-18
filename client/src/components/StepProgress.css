@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap");
+
+.step-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 0 auto 64px;
+  max-width: 980px;
+}
+
+.step-progress__item {
+  --cg-black: #111111;
+  --cg-gold: #b7935f;
+  --cg-gray: #b7b2a4;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 18px;
+  position: relative;
+}
+
+.step-progress__item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  width: 26px;
+  height: 1px;
+  background: #e2ddd0;
+  transform: translateY(-50%);
+}
+
+.step-progress__number {
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cg-gray);
+  transition: color 0.3s ease;
+}
+
+.step-progress__label {
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--cg-gray);
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.step-progress_item--complete .step-progress_number,
+.step-progress_item--complete .step-progress_label {
+  color: var(--cg-black);
+}
+
+.step-progress_item--active .step-progress_number,
+.step-progress_item--active .step-progress_label {
+  color: var(--cg-gold);
+}
+
+@media (max-width: 768px) {
+  .step-progress {
+    justify-content: flex-start;
+    overflow-x: auto;
+    margin-bottom: 40px;
+    padding-bottom: 6px;
+  }
+
+  .step-progress__item {
+    padding: 0 14px;
+  }
+
+  .step-progress__label {
+    display: none;
+  }
+
+  .step-progress_item--active .step-progress_label {
+    display: inline;
+  }
+}

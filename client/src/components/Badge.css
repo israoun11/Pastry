@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@500;600&display=swap");
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: "Jost", sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  padding: 6px 11px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111111;
+  border: 1px solid #b7935f;
+}
+
+.badge--limited {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+}
+
+.badge--photo-worthy {
+  background: #ffffff;
+  color: #b7935f;
+  border-color: #b7935f;
+}
+
+.badge--daily {
+  background: #f7f5f0;
+  color: #6f6b64;
+  border-color: #ddd6c7;
+}

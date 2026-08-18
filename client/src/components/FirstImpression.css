@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500;600&display=swap");
+
+.first-impression {
+  --cg-black: #111111;
+  --cg-cream: #f7f5f0;
+  --cg-gold: #b7935f;
+  --cg-gray: #6f6b64;
+
+  background: var(--cg-cream);
+  padding: 140px 60px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.first-impression--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.first-impression__grid {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  align-items: center;
+}
+
+/* Abstract CSS-only "plated dessert" composition */
+.first-impression__stage {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.first-impression__layer {
+  position: absolute;
+  border-radius: 50%;
+  transition: transform 0.25s ease-out;
+}
+
+.first-impression__layer--base {
+  inset: 6%;
+  background: radial-gradient(circle at 35% 30%, #efe6d6, #dcd0b8 60%, #cabb98 100%);
+  box-shadow: 0 40px 80px rgba(75, 58, 30, 0.18);
+}
+
+.first-impression__layer--mid {
+  inset: 22%;
+  background: radial-gradient(circle at 40% 35%, #4a2f22, #2c1b13 70%);
+  filter: blur(0.5px);
+  box-shadow: inset 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+.first-impression__layer--accent {
+  inset: 40%;
+  background: radial-gradient(circle at 45% 40%, #d8b378, #b7935f 65%, #8a6b41 100%);
+  box-shadow: 0 12px 30px rgba(183, 147, 95, 0.4);
+}
+
+.first-impression__ring {
+  position: absolute;
+  inset: -4%;
+  border-radius: 50%;
+  border: 1px solid rgba(17, 17, 17, 0.12);
+}
+
+.first-impression__stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 65% 20%, rgba(255, 255, 255, 0.5), transparent 40%);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.first-impression__text {
+  max-width: 460px;
+}
+
+.first-impression__number {
+  display: block;
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cg-gold);
+  margin-bottom: 24px;
+}
+
+.first-impression__lead {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 30px;
+  line-height: 1.4;
+  color: var(--cg-black);
+  margin: 0 0 48px;
+}
+
+.first-impression__details {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.first-impression__detail {
+  border-top: 1px solid #ddd6c7;
+  padding-top: 18px;
+}
+
+.first-impression__detail span {
+  display: block;
+  font-family: "Jost", sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--cg-gray);
+  margin-bottom: 8px;
+}
+
+.first-impression__detail p {
+  font-family: "Jost", sans-serif;
+  font-size: 14px;
+  color: var(--cg-black);
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .first-impression {
+    padding: 100px 40px;
+  }
+
+  .first-impression__grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .first-impression__stage {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .first-impression {
+    padding: 80px 24px;
+  }
+
+  .first-impression__lead {
+    font-size: 24px;
+  }
+}

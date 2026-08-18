@@ -1,0 +1,368 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Jost:wght@400;500;600&display=swap");
+
+.home {
+  --cg-white: #ffffff;
+  --cg-black: #111111;
+  --cg-cream: #f7f5f0;
+  --cg-gold: #b7935f;
+  --cg-gray: #6f6b64;
+  background: var(--cg-white);
+}
+
+/* Hero split */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 640px;
+}
+
+.hero__left {
+  background: var(--cg-cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 90px;
+}
+
+.hero__eyebrow {
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--cg-gold);
+  margin-bottom: 22px;
+}
+
+.hero__title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 1.1;
+  color: var(--cg-black);
+  margin: 0 0 24px;
+}
+
+.hero__text {
+  font-family: "Jost", sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--cg-gray);
+  max-width: 400px;
+  margin: 0 0 48px;
+}
+
+.hero__info {
+  border-top: 1px solid #ddd6c7;
+  padding-top: 24px;
+}
+
+.hero__address {
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  color: var(--cg-black);
+  margin: 0 0 8px;
+  letter-spacing: 0.3px;
+}
+
+.hero__hours {
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  color: var(--cg-gray);
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.hero__right {
+  background: var(--cg-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+.pickup-card {
+  width: 100%;
+  max-width: 360px;
+}
+
+.pickup-card__title {
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cg-white);
+  margin: 0 0 36px;
+}
+
+.pickup-card__field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.pickup-card__label {
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #a9a49b;
+  margin-bottom: 10px;
+}
+
+.pickup-card__input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #4a4a4a;
+  color: var(--cg-white);
+  font-family: "Jost", sans-serif;
+  font-size: 15px;
+  padding: 10px 0;
+  outline: none;
+  color-scheme: dark;
+  transition: border-color 0.25s ease;
+}
+
+.pickup-card__input:focus {
+  border-color: var(--cg-gold);
+}
+
+.pickup-card__btn {
+  width: 100%;
+  background: var(--cg-gold);
+  color: var(--cg-black);
+  border: none;
+  padding: 16px 0;
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.pickup-card__btn:hover {
+  background: #cbaa78;
+}
+
+/* Product grid */
+.product-section {
+  padding: 100px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.product-section__title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 34px;
+  text-align: center;
+  color: var(--cg-black);
+  margin: 0 0 60px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px 32px;
+}
+
+.product-card {
+  text-decoration: none;
+  display: block;
+}
+
+.product-card__image-wrap {
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 20px;
+  background: #f2f0ea;
+}
+
+.product-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-card__image {
+  transform: scale(1.05);
+}
+
+.product-card__name {
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--cg-black);
+  margin: 0 0 6px;
+}
+
+.product-card__price {
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  color: var(--cg-gray);
+  margin: 0;
+}
+
+/* Banner */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  overflow: hidden;
+}
+
+.banner__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.32);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.banner__title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 42px;
+  color: var(--cg-white);
+  max-width: 640px;
+  margin: 0 0 36px;
+}
+
+.banner__btn {
+  background: var(--cg-white);
+  color: var(--cg-black);
+  text-decoration: none;
+  padding: 16px 44px;
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.banner__btn:hover {
+  background: var(--cg-gold);
+  color: var(--cg-white);
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero__left,
+  .hero__right {
+    padding: 60px 40px;
+  }
+
+  .hero__title {
+    font-size: 44px;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  /* Hero section */
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero__left {
+    padding: 56px 24px 48px;
+  }
+
+  .hero__eyebrow {
+    font-size: 11px;
+    margin-bottom: 16px;
+  }
+
+  .hero__title {
+    font-size: 34px;
+    margin-bottom: 18px;
+  }
+
+  .hero__text {
+    font-size: 14px;
+    max-width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .hero__right {
+    padding: 48px 24px;
+  }
+
+  .pickup-card {
+    max-width: 100%;
+  }
+
+  .pickup-card__title {
+    font-size: 11px;
+    margin-bottom: 28px;
+  }
+
+  /* Product grid section */
+  .product-section {
+    padding: 56px 20px;
+  }
+
+  .product-section__title {
+    font-size: 26px;
+    margin-bottom: 40px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  /* Banner section */
+  .banner {
+    height: 380px;
+  }
+
+  .banner__title {
+    font-size: 26px;
+    margin-bottom: 28px;
+  }
+
+  .banner__btn {
+    padding: 14px 36px;
+    font-size: 11px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 420px) {
+  .hero__title {
+    font-size: 28px;
+  }
+
+  .banner {
+    height: 320px;
+  }
+
+  .banner__title {
+    font-size: 22px;
+  }
+}

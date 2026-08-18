@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Jost:wght@400;500;600&display=swap");
+
+.category-card {
+  --cg-white: #ffffff;
+  --cg-black: #111111;
+  --cg-cream: #f7f5f0;
+  --cg-gold: #b7935f;
+  --cg-gray: #6f6b64;
+
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  background: var(--cg-cream);
+  outline: none;
+}
+
+.category-card__image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.category-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.category-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(17, 17, 17, 0) 40%,
+    rgba(17, 17, 17, 0.75) 100%
+  );
+  transition: background 0.4s ease;
+}
+
+.category-card:hover .category-card__image {
+  transform: scale(1.06);
+}
+
+.category-card:hover .category-card__overlay,
+.category-card:focus-visible .category-card__overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(17, 17, 17, 0) 25%,
+    rgba(17, 17, 17, 0.85) 100%
+  );
+}
+
+.category-card:focus-visible {
+  box-shadow: 0 0 0 2px var(--cg-gold);
+}
+
+.category-card__content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 36px 40px;
+  text-align: left;
+}
+
+.category-card__title {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 34px;
+  color: var(--cg-white);
+  margin: 0 0 10px;
+}
+
+.category-card__subtitle {
+  font-family: "Jost", sans-serif;
+  font-size: 12.5px;
+  letter-spacing: 0.6px;
+  color: #e9e5db;
+  line-height: 1.6;
+  max-width: 320px;
+  margin: 0 0 22px;
+}
+
+.category-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cg-white);
+  border-bottom: 1px solid var(--cg-gold);
+  padding-bottom: 6px;
+}
+
+.category-card__arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover .category-card__arrow {
+  transform: translateX(6px);
+  color: var(--cg-gold);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .category-card__image-wrap {
+    aspect-ratio: 3 / 4;
+  }
+
+  .category-card__content {
+    padding: 26px 24px;
+  }
+
+  .category-card__title {
+    font-size: 27px;
+  }
+
+  .category-card__subtitle {
+    font-size: 11.5px;
+    max-width: 100%;
+  }
+
+  .category-card__cta {
+    font-size: 10px;
+  }
+}

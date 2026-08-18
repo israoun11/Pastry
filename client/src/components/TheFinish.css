@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Jost:wght@400;500;600&display=swap");
+
+.the-finish {
+  --cg-black: #111111;
+  --cg-cream: #f7f5f0;
+  --cg-gold: #b7935f;
+
+  background: var(--cg-black);
+  padding: 160px 24px;
+  text-align: center;
+}
+
+.the-finish__number {
+  display: block;
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cg-gold);
+  margin-bottom: 30px;
+}
+
+.the-finish__lead {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 24px;
+  color: #b9b3a5;
+  margin: 0 0 70px;
+}
+
+.the-finish__words {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.the-finish__word {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: clamp(32px, 6vw, 60px);
+  color: var(--cg-cream);
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.the-finish__word--visible {
+  opacity: 1;
+  transform: translateY(0);
+}

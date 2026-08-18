@@ -1,0 +1,296 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Jost:wght@400;500;600&display=swap");
+
+.cart-drawer-overlay {
+  --cg-white: #ffffff;
+  --cg-black: #111111;
+  --cg-cream: #f7f5f0;
+  --cg-gold: #b7935f;
+  --cg-gray: #6f6b64;
+
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  background: rgba(17, 17, 17, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.cart-drawer-overlay--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-drawer {
+  --cg-white: #ffffff;
+  --cg-black: #111111;
+  --cg-cream: #f7f5f0;
+  --cg-gold: #b7935f;
+  --cg-gray: #6f6b64;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1101;
+  width: 100%;
+  max-width: 440px;
+  background: var(--cg-white);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.08);
+}
+
+.cart-drawer--open {
+  transform: translateX(0);
+}
+
+.cart-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 32px 24px;
+  border-bottom: 1px solid #ede9df;
+}
+
+.cart-drawer__title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 26px;
+  color: var(--cg-black);
+  margin: 0;
+}
+
+.cart-drawer__close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--cg-black);
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.cart-drawer__close:hover {
+  color: var(--cg-gold);
+}
+
+.cart-drawer__empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  font-family: "Jost", sans-serif;
+  color: var(--cg-gray);
+}
+
+.cart-drawer__empty p {
+  font-size: 15px;
+  color: var(--cg-black);
+  margin: 0 0 8px;
+}
+
+.cart-drawer__empty span {
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+.cart-drawer__items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cart-drawer__item {
+  position: relative;
+  display: flex;
+  gap: 14px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f0ede4;
+}
+
+.cart-drawer__item-image-wrap {
+  width: 76px;
+  height: 76px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: var(--cg-cream);
+}
+
+.cart-drawer__item-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cart-drawer__item-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.cart-drawer__item-name {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--cg-black);
+  margin: 0 0 4px;
+}
+
+.cart-drawer__item-date {
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  color: var(--cg-gray);
+  margin: 0 0 14px;
+}
+
+.cart-drawer__item-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-drawer__quantity {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd6c7;
+  height: 34px;
+}
+
+.cart-drawer__quantity button {
+  width: 30px;
+  height: 100%;
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: var(--cg-black);
+  cursor: pointer;
+}
+
+.cart-drawer__quantity button:disabled {
+  color: #ddd6c7;
+  cursor: not-allowed;
+}
+
+.cart-drawer__quantity span {
+  width: 26px;
+  text-align: center;
+  font-family: "Jost", sans-serif;
+  font-size: 12.5px;
+}
+
+.cart-drawer__item-price {
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cg-black);
+}
+
+.cart-drawer__remove {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  font-family: "Jost", sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--cg-gray);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.cart-drawer__remove:hover {
+  color: #a8352f;
+}
+
+.cart-drawer__footer {
+  border-top: 1px solid #ede9df;
+  padding: 24px 32px 32px;
+}
+
+.cart-drawer__closed-note {
+  font-family: "Jost", sans-serif;
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: #a8352f;
+  background: #fbeceb;
+  border: 1px solid #f0cfcd;
+  padding: 12px 14px;
+  margin: 0 0 20px;
+}
+
+.cart-drawer__subtotal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Jost", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cg-black);
+  margin-bottom: 20px;
+}
+
+.cart-drawer__checkout-wrap {
+  position: relative;
+}
+
+.cart-drawer__checkout {
+  width: 100%;
+  height: 52px;
+  background: var(--cg-black);
+  color: var(--cg-white);
+  border: none;
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.cart-drawer__checkout:hover:not(:disabled) {
+  background: var(--cg-gold);
+}
+
+.cart-drawer__checkout:disabled {
+  background: #d8d3c6;
+  color: var(--cg-gray);
+  cursor: not-allowed;
+}
+
+.cart-drawer__checkout-overlay {
+  position: absolute;
+  bottom: -22px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: "Jost", sans-serif;
+  font-size: 10.5px;
+  color: var(--cg-gray);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .cart-drawer {
+    max-width: 100%;
+  }
+
+  .cart-drawer__header,
+  .cart-drawer__items,
+  .cart-drawer__footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Jost:wght@400;500;600&display=swap");
+
+.texture-selector {
+  --cg-black: #111111;
+  --cg-cream: #f7f5f0;
+  --cg-gold: #b7935f;
+  --cg-gray: #6f6b64;
+
+  background: var(--cg-cream);
+  padding: 140px 60px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.texture-selector--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.texture-selector__grid {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  align-items: center;
+}
+
+/* Abstract morphing visual driven purely by CSS classes */
+.texture-selector__visual-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.texture-selector__visual {
+  width: 280px;
+  height: 280px;
+  background: linear-gradient(160deg, #e7d9bd, #b7935f);
+  transition: border-radius 0.6s ease, filter 0.6s ease, transform 0.6s ease, box-shadow 0.6s ease;
+  box-shadow: 0 30px 60px rgba(75, 58, 30, 0.2);
+}
+
+.texture-selector__visual--silky {
+  border-radius: 50%;
+  filter: blur(0px);
+}
+
+.texture-selector__visual--creamy {
+  border-radius: 46% 54% 60% 40% / 50% 45% 55% 50%;
+  filter: blur(0.5px);
+}
+
+.texture-selector__visual--crisp {
+  border-radius: 4px;
+  transform: rotate(4deg);
+  filter: contrast(1.1);
+}
+
+.texture-selector__visual--mousse {
+  border-radius: 50%;
+  transform: scale(1.06);
+  filter: blur(1px) brightness(1.06);
+  box-shadow: 0 40px 90px rgba(75, 58, 30, 0.14);
+}
+
+.texture-selector__visual--melting {
+  border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+  transform: scaleY(1.1);
+}
+
+.texture-selector__visual--crunchy {
+  border-radius: 10px;
+  transform: rotate(-3deg) scale(0.96);
+  filter: contrast(1.15) saturate(1.05);
+  box-shadow: 0 18px 34px rgba(75, 58, 30, 0.28);
+}
+
+.texture-selector__number {
+  display: block;
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cg-gold);
+  margin-bottom: 32px;
+}
+
+.texture-selector__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.texture-selector__option {
+  background: var(--cg-white, #ffffff);
+  border: 1px solid #ddd6c7;
+  padding: 12px 22px;
+  font-family: "Jost", sans-serif;
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--cg-black);
+  cursor: pointer;
+  transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.texture-selector__option:hover {
+  border-color: var(--cg-gold);
+}
+
+.texture-selector__option--active {
+  background: var(--cg-black);
+  border-color: var(--cg-black);
+  color: var(--cg-cream);
+}
+
+.texture-selector__description {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.5;
+  color: var(--cg-black);
+  max-width: 420px;
+  min-height: 66px;
+  margin: 0;
+  animation: ts-fade 0.4s ease both;
+}
+
+@keyframes ts-fade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1024px) {
+  .texture-selector {
+    padding: 100px 40px;
+  }
+
+  .texture-selector__grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .texture-selector__visual {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .texture-selector {
+    padding: 80px 24px;
+  }
+
+  .texture-selector__description {
+    font-size: 19px;
+  }
+}

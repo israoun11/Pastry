@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Jost:wght@400;500;600&display=swap");
+
+.recommendation-result {
+  --cg-white: #ffffff;
+  --cg-black: #111111;
+  --cg-cream: #f7f5f0;
+  --cg-gold: #b7935f;
+  --cg-gray: #6f6b64;
+
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  animation: rr-in 0.5s ease both;
+}
+
+@keyframes rr-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.recommendation-result__eyebrow {
+  display: block;
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: var(--cg-gold);
+  margin-bottom: 20px;
+}
+
+.recommendation-result__lead {
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  color: var(--cg-gray);
+  margin: 0 0 12px;
+}
+
+.recommendation-result__name {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 38px;
+  color: var(--cg-black);
+  margin: 0 0 20px;
+}
+
+.recommendation-result__reason {
+  font-family: "Jost", sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--cg-gray);
+  max-width: 520px;
+  margin: 0 auto 40px;
+}
+
+.recommendation-result__meta {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 28px 0;
+  border-top: 1px solid #ece5d6;
+  border-bottom: 1px solid #ece5d6;
+  margin-bottom: 40px;
+}
+
+.recommendation-result__meta span {
+  display: block;
+  font-family: "Jost", sans-serif;
+  font-size: 10.5px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--cg-gray);
+  margin-bottom: 10px;
+}
+
+.recommendation-result__meta p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  color: var(--cg-black);
+  margin: 0;
+}
+
+.recommendation-result__section {
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.recommendation-result__section h3 {
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--cg-black);
+  margin: 0 0 14px;
+  text-align: center;
+}
+
+.recommendation-result__section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.recommendation-result__section li {
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  color: var(--cg-gray);
+  border: 1px solid #ddd6c7;
+  padding: 8px 14px;
+}
+
+.recommendation-result__section p {
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  color: var(--cg-gray);
+  text-align: center;
+  margin: 0;
+}
+
+.recommendation-result__actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.recommendation-result__explore,
+.recommendation-result__again {
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  padding: 14px 30px;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.recommendation-result__explore {
+  background: var(--cg-black);
+  color: var(--cg-white);
+  border: none;
+}
+
+.recommendation-result__explore:hover {
+  background: var(--cg-gold);
+}
+
+.recommendation-result__again {
+  background: none;
+  border: 1px solid var(--cg-black);
+  color: var(--cg-black);
+}
+
+.recommendation-result__again:hover {
+  background: var(--cg-black);
+  color: var(--cg-white);
+}
+
+.recommendation-result__cta {
+  display: block;
+  width: 100%;
+  background: var(--cg-gold);
+  color: var(--cg-white);
+  border: none;
+  padding: 18px 0;
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.recommendation-result__cta:hover {
+  background: #9c7a4b;
+}
+
+@media (max-width: 768px) {
+  .recommendation-result__name {
+    font-size: 28px;
+  }
+
+  .recommendation-result__meta {
+    gap: 32px;
+  }
+
+  .recommendation-result__actions {
+    flex-direction: column;
+  }
+}

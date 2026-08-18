@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Jost:wght@400;500;600&display=swap");
+
+.selection-card {
+  --cg-white: #ffffff;
+  --cg-black: #111111;
+  --cg-cream: #f7f5f0;
+  --cg-gold: #b7935f;
+  --cg-gray: #6f6b64;
+
+  cursor: pointer;
+  outline: none;
+  background: var(--cg-white);
+  border: 1px solid #ede9df;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.selection-card:hover {
+  transform: translateY(-3px);
+  border-color: #ddd6c7;
+}
+
+.selection-card--selected {
+  border-color: var(--cg-gold);
+}
+
+.selection-card:focus-visible {
+  box-shadow: 0 0 0 2px var(--cg-gold);
+}
+
+.selection-card__visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--cg-cream);
+}
+
+.selection-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.selection-card:hover .selection-card__image {
+  transform: scale(1.05);
+}
+
+.selection-card__swatch {
+  width: 100%;
+  height: 100%;
+}
+
+.selection-card__mark {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--cg-gold);
+  color: var(--cg-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.selection-card--selected .selection-card__mark {
+  background: var(--cg-gold);
+  color: var(--cg-white);
+}
+
+.selection-card__mark--square {
+  border-radius: 3px;
+}
+
+.selection-card__body {
+  padding: 18px 18px 20px;
+}
+
+.selection-card__title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--cg-black);
+  margin: 0 0 6px;
+}
+
+.selection-card__description {
+  font-family: "Jost", sans-serif;
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--cg-gray);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .selection-card__body {
+    padding: 14px 14px 16px;
+  }
+
+  .selection-card__title {
+    font-size: 16px;
+  }
+}
