@@ -28,9 +28,5 @@ app.use("/api/pastries", require("./routes/pastryRoutes"));
 
 
 
-
-// server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, (err) => 
-  err ? console.log(err) : console.log('server is running on port ${PORT}')
-);
+// Export the app for Vercel Serverless Function 
+module.exports = app;
