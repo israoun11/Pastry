@@ -4,7 +4,7 @@ import axios from "axios";
 // Get All Products
 export const getProducts = createAsyncThunk("product/get", async (_, { rejectWithValue }) => {
   try {
-    const response = await axios.get("http://localhost:5000/api/product");
+    const response = await axios.get("https://pastry-jyi6.vercel.app/api/product");
     return response.data;
   } catch (error) {
     return rejectWithValue(error.response.data);

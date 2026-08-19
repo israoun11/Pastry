@@ -29,7 +29,7 @@ export const userCurrent = createAsyncThunk("user/current", async (_, { rejectWi
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     };
-    const response = await axios.get("http://localhost:5000/api/auth/me", opts);
+    const response = await axios.get("https://pastry-jyi6.vercel.app/api/auth/me", opts);
     return response.data;
   } catch (error) {
     return rejectWithValue(error.response.data);

@@ -5,13 +5,13 @@ import "./ProductGrid.css";
 
 const CATEGORY_CONFIG = {
   drinks: {
-    url: "http://localhost:5000/api/drinks",
+    url: "https://pastry-jyi6.vercel.app/api/drinks",
     dataKey: "drinks",
     label: "Drinks",
     subtitle: "Artisanal Cold Brews, Ceremonial Matcha & Tonics",
   },
   pastries: {
-    url: "http://localhost:5000/api/pastries",
+    url: "https://pastry-jyi6.vercel.app/api/pastries",
     dataKey: "pastries",
     label: "Pastries & Savories",
     subtitle: "Permanent Gourmet Pastries, Tarts & Bites",
