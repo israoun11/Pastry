@@ -33,7 +33,7 @@ const Login = () => {
           Access your account to manage orders and reservations.
         </p>
 
-        {error && <p className="auth__error">{error}</p>}
+        {error && <p className="auth__error"> {(typeof error === "object" ? error?.msg || error?.message || "An error occurred" : error)}</p>}
 
         <form className="auth__form" onSubmit={handleSubmit}>
           <label className="auth__field">

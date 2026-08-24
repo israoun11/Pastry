@@ -45,7 +45,7 @@ const Register = () => {
         </p>
 
         {(formError || error) && (
-          <p className="auth__error">{formError || error}</p>
+          <p className="auth__error">{formError || (typeof error == "object" ? error?.msg || error?.message || "An error occurred" : error)}</p>
         )}
 
         <form className="auth__form" onSubmit={handleSubmit}>
