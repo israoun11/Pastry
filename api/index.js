@@ -6,11 +6,8 @@ const app = express();
 
 require("node:dns/promises").setServers(["1.1.1.1", "8.8.8.8"]);
 
-// Connect to DB on each request (Serverless friendly)
-app.use(async (req, res, next) => {
-  await connectDB();
-  next();
-});
+//connect to DB
+coonectDB()
 
 // Middlewares
 app.use(express.json());
