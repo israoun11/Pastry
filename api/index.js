@@ -7,7 +7,7 @@ const app = express();
 require("node:dns/promises").setServers(["1.1.1.1", "8.8.8.8"]);
 
 //connect to DB
-coonectDB()
+connectDB()
 
 // Middlewares
 app.use(express.json());
