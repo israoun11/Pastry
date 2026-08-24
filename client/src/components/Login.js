@@ -11,22 +11,18 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { loading, error, userInfo } = useSelector((state) => state.user);
+  
+  const { loading, error, user } = useSelector((state) => state.user);
 
   useEffect(() => {
-    if (userInfo) {
+    if (user) {
       navigate("/");
     }
-  }, [userInfo, navigate]);
+  }, [user, navigate]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      await dispatch(userLogin({ email, password })).unwrap();
-      navigate("/");
-    } catch (err) {
-      console.error("Login failed:", err);
-    }
+    dispatch(userLogin({ email, password }));
   };
 
   return (
