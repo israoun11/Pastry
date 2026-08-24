@@ -16,14 +16,14 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const { userInfo } = useSelector((state) => state.user);
+  const { user } = useSelector((state) => state.user);
   const cartCount = useSelector((state) =>
     state.cart.items.reduce((sum, item) => sum + item.quantity, 0)
   );
 
   const handleAccountClick = () => {
     setMenuOpen(false);
-    navigate(userInfo ? "/account" : "/login");
+    navigate(user ? "/account" : "/login");
   };
 
   const handleCartClick = () => {
@@ -55,14 +55,14 @@ const Navbar = () => {
           <button
             className="navbar__icon-btn"
             onClick={handleAccountClick}
-            aria-label={userInfo ? "My account" : "Sign in"}
+            aria-label={user ? "My account" : "Sign in"}
             type="button"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
               <circle cx="12" cy="8" r="4" />
               <path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7" />
             </svg>
-            {userInfo && <span className="navbar__dot" />}
+            {user && <span className="navbar__dot" />}
           </button>
 
           {/* Now opens the CartDrawer instead of navigating to a page */}
