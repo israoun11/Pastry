@@ -4,7 +4,7 @@ import axios from "axios";
 // Register
 export const userRegister = createAsyncThunk("user/register", async (user, { rejectWithValue }) => {
   try {
-    const response = await axios.post("https://pastry-jyi6.vercel.app/auth/register", user);
+    const response = await axios.post("https://pastry-jyi6.vercel.app/api/auth/register", user);
     return response.data;
   } catch (error) {
     return rejectWithValue(error.response.data);
