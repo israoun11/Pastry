@@ -14,13 +14,13 @@ const Register = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { loading, error, userInfo } = useSelector((state) => state.user);
+  const { loading, error, user } = useSelector((state) => state.user);
 
   useEffect(() => {
-    if (userInfo) {
+    if (user) {
       navigate("/");
     }
-  }, [userInfo, navigate]);
+  }, [user, navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
