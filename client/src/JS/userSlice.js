@@ -4,7 +4,7 @@ import axios from "axios";
 // Register
 export const userRegister = createAsyncThunk("user/register", async (user, { rejectWithValue }) => {
   try {
-    const response = await axios.post("http://localhost:5000/api/auth/register", user);
+    const response = await axios.post("https://pastry-jyi6.vercel.app/auth/register", user);
     return response.data;
   } catch (error) {
     return rejectWithValue(error.response.data);
@@ -14,7 +14,7 @@ export const userRegister = createAsyncThunk("user/register", async (user, { rej
 // Login
 export const userLogin = createAsyncThunk("user/login", async (user, { rejectWithValue }) => {
   try {
-    const response = await axios.post("http://localhost:5000/api/auth/login", user);
+    const response = await axios.post("https://pastry-jyi6.vercel.app/api/auth/login", user);
     return response.data;
   } catch (error) {
     return rejectWithValue(error.response.data);
