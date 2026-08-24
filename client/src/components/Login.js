@@ -19,9 +19,14 @@ const Login = () => {
     }
   }, [userInfo, navigate]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(userLogin({ email, password }));
+    try {
+      await dispatch(userLogin({ email, password })).unwrap();
+      navigate("/");
+    } catch (err) {
+      console.error("Login failed:", err);
+    }
   };
 
   return (
@@ -33,7 +38,11 @@ const Login = () => {
           Access your account to manage orders and reservations.
         </p>
 
-        {error && <p className="auth__error"> {(typeof error === "object" ? error?.msg || error?.message || "An error occurred" : error)}</p>}
+        {error && (
+          <p className="auth__error">
+            {typeof error === "object" ? error.msg : error}
+          </p>
+        )}
 
         <form className="auth__form" onSubmit={handleSubmit}>
           <label className="auth__field">
@@ -60,8 +69,12 @@ const Login = () => {
             />
           </label>
 
-          <button type="submit" className="auth__submit" disabled={loading}>
-            {loading ? "Signing In…" : "Sign In"}
+          <button
+            type="submit"
+            className="auth__submit"
+            disabled={loading}
+          >
+            {loading ? "Signing In..." : "Sign In"}
           </button>
         </form>
 
